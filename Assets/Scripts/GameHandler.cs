@@ -5,9 +5,12 @@ using CodeMonkey;
 using CodeMonkey.Utils;
 
 public class GameHandler : MonoBehaviour
-{
+{ 
+    [SerializeField] private Snake snake;
+    private LevelGrid levelGrid;
+   
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Debug.Log("GameHandler Start");
     
@@ -17,15 +20,14 @@ public class GameHandler : MonoBehaviour
         //    number ++;
         //}, .3f);
     
-        GameObject snakeHeadGameObject = new GameObject();
-        SpriteRenderer snakeSpriteRenderer = snakeHeadGameObject.AddComponent<SpriteRenderer>();
-        snakeSpriteRenderer.sprite = GameAssets.i.snakeHeadSprite;
+        //GameObject snakeHeadGameObject = new GameObject();
+        //SpriteRenderer snakeSpriteRenderer = snakeHeadGameObject.AddComponent<SpriteRenderer>();
+        //snakeSpriteRenderer.sprite = GameAssets.i.snakeHeadSprite;
         
+        levelGrid = new LevelGrid(20,20);
+        
+        snake.Setup(levelGrid);
+        levelGrid.Setup(snake);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
