@@ -28,13 +28,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/RichardManthorpe/snake">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="Images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Snake</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    ...My first Unity game...
     <br />
     <a href="https://github.com/RichardManthorpe/snake"><strong>Explore the docs »</strong></a>
     <br />
@@ -79,19 +79,18 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<img src="images/product-screenshot.png" alt="Snake Screen Shot" width="400"/>
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+I've always enjoyed building simple but addictive games. Ever since college when I remember building a projectile game on a graphical calculator, and then experiementing with BASIC programming on the first macs. I also remember fondly the hours spent in front of the Atari console as a child, jumping the small sprite over barrels to the top of the ramps where donkey kong was holding my girlfriend, before moving on to space invaders, missile command, combat and asteroids.
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+The motivations for building this first Unity game are:
+* to keep my coding skills up to scratch
+* to learn new coding languages while building something I enjoy
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+My goals for building games are:
+* to build for mobile devices 
+* to build simple, fun, addictive games for kids 
+* to build games with a edge that defines Qode Red
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -99,16 +98,7 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Unity](https://unity.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -117,34 +107,22 @@ This section should list any major frameworks/libraries used to bootstrap your p
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+This is a list things you need to use the software and how to install them.
+* Windows / Mac / Linux OS
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+1. Download Unity [https://unity.com/download](https://unity.com/download)
+2. Create a new Project in Unity called "snake"
+3. Clone the snake repo
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+   git clone https://github.com/RichardManthorpe/snake.git
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+4. Copy the repo contents into your snake project
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -153,21 +131,28 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+* Use the arrow keys to navigate your snake.
+* Eat apples to grow your snake.
+* Avoid your own body.
+* Beat the high score
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
+- [ ] Add Changelog
+- [ ] Increase speed for each body part
+- [ ] Apples disappear after time limit
+- [ ] Improved Images
+- [ ] Improved Sounds
+- [ ] Levels
+- [ ] Walls
+- [ ] Android
+- [ ] IOS
+- [ ] Unique edge!?
+- [ ] Adverts
 - [ ] Multi-language Support
     - [ ] Chinese
     - [ ] Spanish
@@ -208,9 +193,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Your Name - [@Moohar](https://twitter.com/moohar) - rmanthorpe@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/RichardManthorpe/snake](https://github.com/RichardManthorpe/snake)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -222,13 +207,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Unity Code Monkey](https://unitycodemonkey.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
