@@ -205,7 +205,7 @@ Project Link: [https://github.com/RichardManthorpe/snake](https://github.com/Ric
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Resources I've found helpful and would like to give credit to!
 
 * [Choose an Open Source License](https://choosealicense.com)
 * [Unity Code Monkey](https://unitycodemonkey.com/)
