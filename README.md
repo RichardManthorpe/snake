@@ -79,7 +79,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<img src="Images/product-screenshot.png" alt="Snake Screen Shot" width="400"/>
+<center><img src="Images/product-screenshot.png" alt="Snake Screen Shot 1" width="400"/>&nbsp;<img src="Images/product-screenshot2.png" alt="Snake Screen Shot 2" width="400"/>&nbsp;<img src="Images/product-screenshot3.png" alt="Snake Screen Shot 3" width="400"/></center>
 
 I've always enjoyed building simple but addictive games. Ever since college when I remember building a projectile game on a graphical calculator, and then experiementing with BASIC programming on the first macs. I also remember fondly the hours spent in front of the Atari console as a child, jumping the small sprite over barrels to the top of the ramps where donkey kong was holding my girlfriend, before moving on to space invaders, missile command, combat and asteroids.
 
