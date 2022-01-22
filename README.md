@@ -107,22 +107,23 @@ My goals for building games are:
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
 This is a list things you need to use the software and how to install them.
-* Windows / Mac / Linux OS
+* Windows, Mac or Linux Operating System
 
 ### Installation
 
-1. Download Unity [https://unity.com/download](https://unity.com/download)
+1. Download the correct flavour of Unity for your OS [https://unity.com/download](https://unity.com/download)
 2. Create a new Project in Unity called "snake"
 3. Clone the snake repo
    ```
    git clone https://github.com/RichardManthorpe/snake.git
    ```
 4. Copy the repo contents into your snake project
+5. Test run in Unity and then build.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
