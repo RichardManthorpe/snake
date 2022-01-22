@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using CodeMonkey.Utils;
 
 public class GameOverWindow : MonoBehaviour
@@ -18,16 +19,19 @@ public class GameOverWindow : MonoBehaviour
         Hide();
     }
 
-    private void Show() {
+    private void Show(bool isNewHighscore) {
         gameObject.SetActive(true);
+        transform.Find("newHighScoreText").gameObject.SetActive(isNewHighscore);
+        transform.Find("scoreText").GetComponent<Text>().text = Score.GetScore().ToString();
+        transform.Find("highscoreText").GetComponent<Text>().text = "HIGHSCORE " + Score.GetHighscore().ToString();
     }
 
     private void Hide() {
         gameObject.SetActive(false);
     }
 
-    public static void ShowStatic() {
-            instance.Show();
+    public static void ShowStatic(bool isNewHighscore) {
+            instance.Show(isNewHighscore);
     }
 
 }

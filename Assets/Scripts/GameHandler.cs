@@ -8,7 +8,7 @@ public class GameHandler : MonoBehaviour
 { 
     private static GameHandler instance;
 
-    private static int score;
+    //private static int score;
 
     [SerializeField] private Snake snake;
     
@@ -17,14 +17,22 @@ public class GameHandler : MonoBehaviour
    
     private void Awake() {
         instance = this;
-        InitiatizeStatic();
+        Score.InitiatizeStatic();
+        Time.timeScale=1f;
+
+        //Score.TrySetNewHighscore(200);
+        //Save data in Playerprefs
+        //PlayerPrefs.SetInt("highscore", 100);
+        //PlayerPrefs.Save();
+        Debug.Log(PlayerPrefs.GetInt("highscore"));
+
     }
 
     // Start is called before the first frame update
     private void Start()
     {
         Debug.Log("GameHandler Start");
-        Time.timeScale = 1f;
+        
         levelGrid = new LevelGrid(20,20);
         
         snake.Setup(levelGrid);
@@ -45,20 +53,10 @@ public class GameHandler : MonoBehaviour
         }
     }
 
-    public static void InitiatizeStatic(){
-        score=0;
-    }
-
-    public static int GetScore(){
-        return score;
-    }
-
-    public static void AddScore(){
-        score +=100;
-    }
-
     public static void SnakeDied(){
-        GameOverWindow.ShowStatic();
+        bool isNewHighscore = Score.TrySetNewHighscore();
+        GameOverWindow.ShowStatic(isNewHighscore);
+        ScoreWindow.HideStatic();
     }
 
     public static void ResumeGame(){
