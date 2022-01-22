@@ -12,6 +12,7 @@ public class MainMenuWindow : MonoBehaviour
     }
 
     private void Awake() {
+    
         transform.Find("howToPlaySub").gameObject.SetActive(false);
 
         transform.Find("howToPlaySub").GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
