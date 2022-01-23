@@ -4,8 +4,21 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
- 
+
 ## [Unreleased] - yyyy-mm-dd
+ 
+I'll probably have walls appearing next!
+
+### Added
+
+- [Code Red Games - snake](https://github.com/RichardManthorpe/snake/issues/7)
+  Walls
+  
+### Changed
+ 
+### Fixed
+
+## [V1.4.0] - 2022-01-23
  
 Other food items appear
 
