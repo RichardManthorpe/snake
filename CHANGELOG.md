@@ -8,6 +8,20 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased] - yyyy-mm-dd
  
+Apples will disappear and reappear after time or so many snake moves
+
+### Added
+
+- [Code Red Games - snake](https://github.com/RichardManthorpe/snake/issues/3)
+  Apples to move 
+  
+### Changed
+ 
+### Fixed
+
+
+## [1.2.0] - 2022-01-23
+ 
 First actual game logic changes
 
 ### Added
