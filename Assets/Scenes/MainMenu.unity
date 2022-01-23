@@ -452,7 +452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Qode Red Games - Version: 1.1.0'
+  m_Text: 'Qode Red Games - Version: 1.2.0'
 --- !u!222 &270250372
 CanvasRenderer:
   m_ObjectHideFlags: 0
