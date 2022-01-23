@@ -11,6 +11,8 @@ public class LevelGrid {
     private int width;
     private int height;
     private Snake snake;
+    private int moveCountSinceFood;
+    private int maxMovesForApple =30;
 
     public LevelGrid(int width, int height){
             this.width=width;
@@ -38,9 +40,16 @@ public class LevelGrid {
             Object.Destroy(foodGameObject);
             SpawnFood();
             Score.AddScore();
+            moveCountSinceFood=0;
             return true;
-        }
-        else {
+        }else if (moveCountSinceFood>maxMovesForApple){
+            Object.Destroy(foodGameObject);
+            SpawnFood();
+            moveCountSinceFood=0;
+            return false;
+        }else {
+            moveCountSinceFood++;
+            //Debug.Log("Move Count: " + moveCountSinceFood);
             return false;
         }
     }

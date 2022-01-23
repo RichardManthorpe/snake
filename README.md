@@ -146,7 +146,9 @@ This is a list things you need to use the software and how to install them.
 
 - [X] Add Changelog
 - [X] Increase speed for each body part
-- [ ] Apples disappear after time limit
+- [X] Apples disappear after time limit
+- [ ] Golden star food appears
+- [ ] Rotten apple food appears
 - [ ] Improved Images
 - [ ] Improved Sounds
 - [ ] Levels
