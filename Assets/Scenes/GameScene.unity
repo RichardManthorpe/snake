@@ -2036,6 +2036,10 @@ MonoBehaviour:
   snakeHeadSprite: {fileID: 21300000, guid: e0ff8c807685b13438ac0af006650ae2, type: 3}
   snakeBodySprite: {fileID: 21300000, guid: 1c106d82ddb1fd642a9f9e7b665c64eb, type: 3}
   foodSprite: {fileID: 21300000, guid: 8e53a83c2975d69429f271b6fa928516, type: 3}
+  starSprite: {fileID: 21300000, guid: 5ee41c984e09df941a05cb5c2449fb88, type: 3}
+  rottenSprite: {fileID: 21300000, guid: b50c609a8e3f40647b56d8fa73417be5, type: 3}
+  snailSprite: {fileID: 21300000, guid: d33b20f938619fc49a07376ceeef4b99, type: 3}
+  lightningSprite: {fileID: 21300000, guid: ab180cd6b28f239458329f76732c1b2b, type: 3}
   soundAudioClipArray:
   - sound: 0
     audioClip: {fileID: 8300000, guid: 399f2cf43927ef24ca45b968f7a2cf07, type: 3}
@@ -2044,8 +2048,16 @@ MonoBehaviour:
   - sound: 2
     audioClip: {fileID: 8300000, guid: 2a791fc9566da8342b0ad148f0e21cc8, type: 3}
   - sound: 3
-    audioClip: {fileID: 8300000, guid: 8406178ff5d32b240b4e526c9562cdca, type: 3}
+    audioClip: {fileID: 8300000, guid: 52b78774630b2ca4b88b4f856db04f5e, type: 3}
   - sound: 4
+    audioClip: {fileID: 8300000, guid: 330dbd4d510eb0c4baea6ba95e20effd, type: 3}
+  - sound: 5
+    audioClip: {fileID: 8300000, guid: 4d5592b25d8a6ab49be337cd9d5fbdd8, type: 3}
+  - sound: 6
+    audioClip: {fileID: 8300000, guid: cbbe2e4bc1c27d44abc9b93fced8e210, type: 3}
+  - sound: 7
+    audioClip: {fileID: 8300000, guid: 8406178ff5d32b240b4e526c9562cdca, type: 3}
+  - sound: 8
     audioClip: {fileID: 8300000, guid: 7768b070c585f924eb03abbe0502ba30, type: 3}
 --- !u!1 &2044634961
 GameObject:

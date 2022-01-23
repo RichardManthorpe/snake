@@ -14,6 +14,10 @@ public class GameAssets : MonoBehaviour
     public Sprite snakeHeadSprite;
     public Sprite snakeBodySprite;
     public Sprite foodSprite;
+    public Sprite starSprite;
+    public Sprite rottenSprite;
+    public Sprite snailSprite;
+    public Sprite lightningSprite;
     
     public SoundAudioClip[] soundAudioClipArray;
     

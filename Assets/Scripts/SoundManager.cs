@@ -9,7 +9,11 @@ public static class SoundManager
     public enum Sound {
         SnakeMove,
         SnakeDie,
-        SnakeEat,
+        SnakeEatFood,
+        SnakeEatStar,
+        SnakeEatRotten,
+        SnakeEatSnail,
+        SnakeEatLightning,
         ButtonClick,
         ButtonOver
     }

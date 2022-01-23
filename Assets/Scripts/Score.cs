@@ -17,8 +17,14 @@ public static class Score
         return score;
     }
 
-    public static void AddScore(){
-        score +=100;
+    public static void AddScore(LevelGrid.FoodType foodType){
+        if (foodType==LevelGrid.FoodType.Food){
+            score +=100;
+        }else if (foodType==LevelGrid.FoodType.Star){
+            score +=500;
+        }else if (foodType==LevelGrid.FoodType.Rotten){
+            score -=500;
+        }
     }
 
     public static int GetHighscore() {
