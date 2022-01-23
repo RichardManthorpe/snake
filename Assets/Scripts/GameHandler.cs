@@ -21,6 +21,7 @@ public class GameHandler : MonoBehaviour
 
     private void Start() {
         Debug.Log("GameHandler Start");
+        Debug.Log(System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
         
         levelGrid = new LevelGrid(20,20);
         

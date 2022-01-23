@@ -174,7 +174,7 @@ public class Snake : MonoBehaviour
         if (gridMoveTimerMax>maxSpeed){
             gridMoveTimerMax -= (speedIncreasePercent/100f)*gridMoveTimerMax;
         }   
-        Debug.Log("gridMoveTimerMax: "+gridMoveTimerMax);
+        //Debug.Log("gridMoveTimerMax: "+gridMoveTimerMax);
     }
     private float GetAngleFromVector(Vector2Int dir){
         float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;

@@ -5,8 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
  
-
 ## [Unreleased] - yyyy-mm-dd
+ 
+Other food items appear
+
+### Added
+
+- [Code Red Games - snake](https://github.com/RichardManthorpe/snake/issues/18)
+  Golden star food
+- [Code Red Games - snake](https://github.com/RichardManthorpe/snake/issues/19)  
+  Rotten apple food
+  
+### Changed
+ 
+### Fixed
+
+## [1.3.0] - 2022-01-23
  
 Apples will disappear and reappear after time or so many snake moves
 
