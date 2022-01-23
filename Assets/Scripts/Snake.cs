@@ -19,35 +19,46 @@ public class Snake : MonoBehaviour
         Dead
     }
 
+    private enum SpeedAction {
+        Min,
+        Max,
+        Increase,
+        Decrease,
+        ResetToPrevious
+    }
+
     private State state;
     private Direction gridMoveDirection;
     private Vector2Int gridPosition;
     private float gridMoveTimer;
     private float gridMoveTimerMax;
+    private float gridMoveTimerNew;
     private float maxSpeed;
+    private float currentSpeed;
     private int speedIncreasePercent;
+    private int speedDecreasePercent;
     private LevelGrid levelGrid;
     private int snakeBodySize;
     private List<SnakeMovePosition> snakeMovePositionList;
     private List<SnakeBodyPart> snakeBodyPartList;
-
+    private LevelGrid.FoodType foodType, oldFoodType;
     
     public void Setup(LevelGrid levelGrid) {
         this.levelGrid = levelGrid;
 
     }
 
-
     private void Awake(){
         gridPosition=new Vector2Int(10,10);
         
         gridMoveTimerMax = 0.3f;
-        maxSpeed = 0.05f;
+        maxSpeed = 0.1f;
         speedIncreasePercent = 5;
+        speedDecreasePercent = 50;
         gridMoveTimer = gridMoveTimerMax;
-        
+        gridMoveTimerNew = gridMoveTimerMax;
+        currentSpeed = gridMoveTimerMax;
         gridMoveDirection = Direction.Right;
-
         snakeMovePositionList = new List<SnakeMovePosition>();
         snakeBodySize = 0;
 
@@ -100,8 +111,8 @@ public class Snake : MonoBehaviour
 
     private void HandleGridMovement(){
         gridMoveTimer += Time.deltaTime;
-        if (gridMoveTimer >= gridMoveTimerMax){
-            gridMoveTimer -= gridMoveTimerMax;
+        if (gridMoveTimer >= gridMoveTimerNew){
+            gridMoveTimer -= gridMoveTimerNew;
             
             SoundManager.PlaySound(SoundManager.Sound.SnakeMove);
 
@@ -125,17 +136,64 @@ public class Snake : MonoBehaviour
             gridPosition += gridMoveDirectionVector;
 
             gridPosition = levelGrid.ValidateGridPosition(gridPosition);
+            foodType=levelGrid.GetFoodType();
+            bool eatFood = levelGrid.TrySnakeEatFood(gridPosition);
 
-            bool snakeAteFood = levelGrid.TrySnakeEatFood(gridPosition);
-            if (snakeAteFood) {
-                //snake ate food grow body
-                snakeBodySize++;
+            if(levelGrid.GetTryResult()==LevelGrid.TryResult.Timeout){
+                levelGrid.SpawnFood();
+            }else if(eatFood){
+                switch (foodType){
+                    default:
+                    case LevelGrid.FoodType.Food:
+                        //snake ate food grow body
+                        SoundManager.PlaySound(SoundManager.Sound.SnakeEatFood);
+                        snakeBodySize++;
+                        CreateSnakeBodyPart();
+                        if (oldFoodType==LevelGrid.FoodType.Lightning){
+                            ChangeSnakeSpeed(SpeedAction.ResetToPrevious);
+                        }
+                        ChangeSnakeSpeed(SpeedAction.Increase);
+                        Score.AddScore(foodType);
+                        levelGrid.SpawnFood();
 
-                CreateSnakeBodyPart();
-                IncreaseSnakeSpeed();
-                SoundManager.PlaySound(SoundManager.Sound.SnakeEat);
+                    break;    
+                    case LevelGrid.FoodType.Snail:
+                    //snake ate snail slow down until next food
+                        SoundManager.PlaySound(SoundManager.Sound.SnakeEatSnail);
+                        ChangeSnakeSpeed(SpeedAction.Min);
+                        levelGrid.SpawnFood();
+
+                    break;
+                    case LevelGrid.FoodType.Lightning:
+                        //snake ate lightning, max speed until next food
+                        SoundManager.PlaySound(SoundManager.Sound.SnakeEatLightning);
+                        ChangeSnakeSpeed(SpeedAction.Max);
+                        levelGrid.SpawnFood();
+
+                    break;
+                    case LevelGrid.FoodType.Star:
+                        SoundManager.PlaySound(SoundManager.Sound.SnakeEatStar);
+                        if (oldFoodType==LevelGrid.FoodType.Lightning){
+                            ChangeSnakeSpeed(SpeedAction.ResetToPrevious);
+                        }
+                        Score.AddScore(foodType);
+                        levelGrid.SpawnFood();
+
+                    break;
+                    case LevelGrid.FoodType.Rotten:
+                        //snakeBodySize--;
+                        SoundManager.PlaySound(SoundManager.Sound.SnakeEatRotten);
+                        Score.AddScore(foodType);
+                        if (oldFoodType==LevelGrid.FoodType.Lightning){
+                            ChangeSnakeSpeed(SpeedAction.ResetToPrevious);
+                        }
+                        ChangeSnakeSpeed(SpeedAction.Decrease);
+                        levelGrid.SpawnFood();
+                    break;
+                }
+                oldFoodType=foodType;
             }
-            
+
             if (snakeMovePositionList.Count >= snakeBodySize + 1) {
                 snakeMovePositionList.RemoveAt(snakeMovePositionList.Count - 1);
             }
@@ -170,12 +228,38 @@ public class Snake : MonoBehaviour
             }
     }
 
-    private void IncreaseSnakeSpeed() {
-        if (gridMoveTimerMax>maxSpeed){
-            gridMoveTimerMax -= (speedIncreasePercent/100f)*gridMoveTimerMax;
-        }   
-        //Debug.Log("gridMoveTimerMax: "+gridMoveTimerMax);
+    private void ChangeSnakeSpeed(SpeedAction action) {
+        // don't go any faster than max speed
+        switch (action) {
+            default:
+            case SpeedAction.Max:
+                currentSpeed=gridMoveTimerNew;
+                gridMoveTimerNew=maxSpeed;
+                break;
+            case SpeedAction.Min:
+                currentSpeed=gridMoveTimerNew;
+                gridMoveTimerNew=gridMoveTimerMax;
+                break;
+            case SpeedAction.Increase:
+                if (gridMoveTimerNew>maxSpeed){
+                    currentSpeed=gridMoveTimerNew;
+                    gridMoveTimerNew -= (speedIncreasePercent/100f)*gridMoveTimerNew;
+                }    
+                break;
+            case SpeedAction.Decrease:
+                if (gridMoveTimerNew<maxSpeed){
+                    currentSpeed=gridMoveTimerNew;
+                    gridMoveTimerNew += (speedDecreasePercent/100f)*gridMoveTimerNew;
+                }    
+                break;
+            case SpeedAction.ResetToPrevious:
+                gridMoveTimerNew=currentSpeed;
+                break;
+        }
+        //currentSpeed=gridMoveTimer;
+        //Debug.Log("gridMoveTimerNew: "+gridMoveTimerNew);
     }
+
     private float GetAngleFromVector(Vector2Int dir){
         float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (n<0) n += 360;
