@@ -145,7 +145,7 @@ This is a list things you need to use the software and how to install them.
 ## Roadmap
 
 - [X] Add Changelog
-- [ ] Increase speed for each body part
+- [X] Increase speed for each body part
 - [ ] Apples disappear after time limit
 - [ ] Improved Images
 - [ ] Improved Sounds
