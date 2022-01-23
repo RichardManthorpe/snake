@@ -81,16 +81,17 @@
 ## About The Project
 <center><img src="Images/product-screenshot.png" alt="Snake Screen Shot 1" width="400"/>&nbsp;<img src="Images/product-screenshot2.png" alt="Snake Screen Shot 2" width="400"/>&nbsp;<img src="Images/product-screenshot3.png" alt="Snake Screen Shot 3" width="400"/></center>
 
-I've always enjoyed building simple but addictive games. Ever since college when I remember building a projectile game on a graphical calculator, and then experiementing with BASIC programming on the first macs. I also remember fondly the hours spent in front of the Atari console as a child, jumping the small sprite over barrels to the top of the ramps where donkey kong was holding my girlfriend, before moving on to space invaders, missile command, combat and asteroids.
+ Good catchy games, like music, stay with you forever. I've always enjoyed building and playing simple but addictive games. Ever since college when I remember building a projectile game on a graphical calculator, and then experiementing with BASIC programming on the first macs. I fondly remember the hours spent in front of the Atari console as a child, jumping the small sprite over barrels to the top of the ramps where donkey kong was holding the kidnapped girlfriend, before moving on to space invaders, missile command, combat and asteroids...and what was that driving game... before moving on to Chucky Egg on the Spectrum and then Tetris on the Gameboy.
+ I find games are like films. The newer, cleverer, busier, more action packed films are less fun than the simple old films with a solid but kinda prectable story-line.
 
 The motivations for building this first Unity game are:
-* to keep my coding skills up to scratch
-* to learn new coding languages while building something I enjoy
+* to keep my coding skills up to par as I progress in my career.
+* to keep learning new coding tools, techniques and languages while building something I enjoy.
 
 My goals for building games are:
-* to build for mobile devices 
-* to build simple, fun, addictive games for kids 
-* to build games with a edge that defines Qode Red
+* to build for the various mobile devices and operating systems on the markets.
+* to build simple, fun, addictive games for kids of all ages.
+* to build games with a trade mark "edge" that defines Qode Red Games.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -135,7 +136,7 @@ This is a list things you need to use the software and how to install them.
 * Use the arrow keys to navigate your snake.
 * Eat apples to grow your snake.
 * Avoid your own body.
-* Beat the high score
+* Beat the high score!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -143,7 +144,7 @@ This is a list things you need to use the software and how to install them.
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add Changelog
+- [X] Add Changelog
 - [ ] Increase speed for each body part
 - [ ] Apples disappear after time limit
 - [ ] Improved Images
