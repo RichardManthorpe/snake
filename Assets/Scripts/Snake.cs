@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,20 +24,28 @@ public class Snake : MonoBehaviour
     private Vector2Int gridPosition;
     private float gridMoveTimer;
     private float gridMoveTimerMax;
+    private float maxSpeed;
+    private int speedIncreasePercent;
     private LevelGrid levelGrid;
     private int snakeBodySize;
     private List<SnakeMovePosition> snakeMovePositionList;
     private List<SnakeBodyPart> snakeBodyPartList;
 
+    
     public void Setup(LevelGrid levelGrid) {
         this.levelGrid = levelGrid;
+
     }
 
 
     private void Awake(){
         gridPosition=new Vector2Int(10,10);
-        gridMoveTimerMax = .3f;
+        
+        gridMoveTimerMax = 0.3f;
+        maxSpeed = 0.05f;
+        speedIncreasePercent = 5;
         gridMoveTimer = gridMoveTimerMax;
+        
         gridMoveDirection = Direction.Right;
 
         snakeMovePositionList = new List<SnakeMovePosition>();
@@ -90,7 +99,7 @@ public class Snake : MonoBehaviour
     }
 
     private void HandleGridMovement(){
-         gridMoveTimer += Time.deltaTime;
+        gridMoveTimer += Time.deltaTime;
         if (gridMoveTimer >= gridMoveTimerMax){
             gridMoveTimer -= gridMoveTimerMax;
             
@@ -121,7 +130,9 @@ public class Snake : MonoBehaviour
             if (snakeAteFood) {
                 //snake ate food grow body
                 snakeBodySize++;
+
                 CreateSnakeBodyPart();
+                IncreaseSnakeSpeed();
                 SoundManager.PlaySound(SoundManager.Sound.SnakeEat);
             }
             
@@ -149,13 +160,6 @@ public class Snake : MonoBehaviour
         }       
     }
 
-    /*private void CreateSnakeBody() {
-        GameObject snakeBodyGameObject = new GameObject("SnakeBody", typeof(SpriteRenderer));
-        snakeBodyGameObject.GetComponent<SpriteRenderer>().sprite = GameAssets.i.snakeBodySprite;
-        snakeBodyGameObject.GetComponent<SpriteRenderer>().sortingOrder = -snakeBodyTransformList.Count;
-        snakeBodyTransformList.Add(snakeBodyGameObject.transform);
-    }*/
-
     private void CreateSnakeBodyPart() {
         snakeBodyPartList.Add(new SnakeBodyPart(snakeBodyPartList.Count));
     }
@@ -166,6 +170,12 @@ public class Snake : MonoBehaviour
             }
     }
 
+    private void IncreaseSnakeSpeed() {
+        if (gridMoveTimerMax>maxSpeed){
+            gridMoveTimerMax -= (speedIncreasePercent/100f)*gridMoveTimerMax;
+        }   
+        Debug.Log("gridMoveTimerMax: "+gridMoveTimerMax);
+    }
     private float GetAngleFromVector(Vector2Int dir){
         float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         if (n<0) n += 360;
