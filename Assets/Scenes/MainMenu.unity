@@ -452,7 +452,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Qode Red Games - Version: 1.4.0'
+  m_Text: 'Qode Red Games - Version: 1.5.0'
 --- !u!222 &270250372
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2708,6 +2708,7 @@ MonoBehaviour:
   rottenSprite: {fileID: 21300000, guid: b50c609a8e3f40647b56d8fa73417be5, type: 3}
   snailSprite: {fileID: 21300000, guid: d33b20f938619fc49a07376ceeef4b99, type: 3}
   lightningSprite: {fileID: 21300000, guid: ab180cd6b28f239458329f76732c1b2b, type: 3}
+  wallSprite: {fileID: 0}
   soundAudioClipArray:
   - sound: 0
     audioClip: {fileID: 8300000, guid: 399f2cf43927ef24ca45b968f7a2cf07, type: 3}

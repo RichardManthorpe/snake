@@ -15,7 +15,8 @@ public static class SoundManager
         SnakeEatSnail,
         SnakeEatLightning,
         ButtonClick,
-        ButtonOver
+        ButtonOver,
+        Crash
     }
 
 
