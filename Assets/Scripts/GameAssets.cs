@@ -18,6 +18,7 @@ public class GameAssets : MonoBehaviour
     public Sprite rottenSprite;
     public Sprite snailSprite;
     public Sprite lightningSprite;
+    public Sprite wallSprite;
     
     public SoundAudioClip[] soundAudioClipArray;
     

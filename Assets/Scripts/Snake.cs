@@ -193,7 +193,17 @@ public class Snake : MonoBehaviour
                 }
                 oldFoodType=foodType;
             }
-
+           
+            bool hitWall = levelGrid.TrySnakeHitWall(gridPosition);
+            if (levelGrid.GetTryResult()==LevelGrid.TryResult.WallTimeout){
+                levelGrid.SpawnWall();
+            } else if (levelGrid.GetTryResult()==LevelGrid.TryResult.HitWall){
+                //DEAD
+                state=State.Dead;
+                GameHandler.SnakeDied();
+                SoundManager.PlaySound(SoundManager.Sound.Crash);
+            }
+            
             if (snakeMovePositionList.Count >= snakeBodySize + 1) {
                 snakeMovePositionList.RemoveAt(snakeMovePositionList.Count - 1);
             }
@@ -378,7 +388,4 @@ public class Snake : MonoBehaviour
             }
         }
     }
-
-
-
 }

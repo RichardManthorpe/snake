@@ -152,7 +152,7 @@ This is a list things you need to use the software and how to install them.
 - [ ] Improved Images
 - [ ] Improved Sounds
 - [ ] Levels
-- [ ] Walls
+- [X] Walls
 - [ ] Android
 - [ ] IOS
 - [ ] Unique edge!?
